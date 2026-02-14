@@ -1,5 +1,5 @@
 
-// Scroll Reveal Animation
+// Scroll Reveal
 const observerOptions = {
     threshold: 0.15,
     rootMargin: "0px 0px -50px 0px"
@@ -16,55 +16,47 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in').forEach(sec => observer.observe(sec));
 
-// FAQ Accordion Logic (if any FAQs are added later, though brief didn't explicitly ask for FAQ section in the final list, but "UX Enhancements" mentioned it. I'll add the support just in case or if I missed it in HTML. Brief listed "Smooth accordion style FAQ" in UX Enhancements but didn't list it in sections list. I added Stories/Founder instead. I will add the logic just in case.)
-// Actually the brief listed "UX Enhancements... Smooth accordion style FAQ". I didn't add FAQ section in HTML because the "Sections" list in the prompt didn't strictly have it, but "UX Enhancements" did. 
-// I'll stick to the sections explicitly requested in the text body: Hero, Pain, Positioning, Trust, Mystery, How It Works, Pre Launch, Founder Note, Stories, Footer. 
-// If the user wants FAQ, I can add it, but for now I'll focus on the core flow.
+// FAQ Accordion Logic
+// (No FAQ elements currently in index.html, but keeping structure ready)
 
-// Urgency & Form Logic
-const API_BASE = 'http://localhost:3000';
+// Urgency Logic
+const API_BASE = '/api'; // Relative for Vercel functions
 const urgencyBadge = document.getElementById('urgency-badge');
-const form = document.getElementById('signup-form');
+const form = document.querySelector('form');
 const emailInput = document.getElementById('email');
 const messageEl = document.getElementById('form-message');
-const submitBtn = form ? form.querySelector('button') : null;
+const submitBtn = document.querySelector('button[type="submit"]');
 
 async function updateStatus() {
     try {
-        const res = await fetch(`${API_BASE}/api/status`);
+        const res = await fetch(`${API_BASE}/status`);
         if (res.ok) {
             const data = await res.json();
             const left = Math.max(0, 50 - data.count);
 
             if (urgencyBadge) {
                 if (left <= 0) {
-                    urgencyBadge.textContent = "Batches Full • Join Waitlist";
-                    urgencyBadge.style.color = "#E07A5F"; // Burnt Orange
-                    urgencyBadge.style.borderColor = "#E07A5F";
-                } else if (left < 15) {
-                    urgencyBadge.textContent = `High Demand: ${left} Spots Remaining`;
+                    urgencyBadge.textContent = "Beta Full • Waitlist Active";
                     urgencyBadge.style.color = "#E07A5F";
                     urgencyBadge.style.borderColor = "#E07A5F";
+                    urgencyBadge.style.background = "#FFF5F5";
                 } else {
-                    urgencyBadge.textContent = `Early Access: ${left} Spots Open`;
-                    urgencyBadge.style.color = "#C8AA6E"; // Gold
+                    urgencyBadge.textContent = `Batch 1: ${left} Spots Left`;
                     urgencyBadge.style.borderColor = "#C8AA6E";
+                    urgencyBadge.style.color = "#8C7342";
+                    urgencyBadge.style.background = "#FFFCF5";
                 }
             }
         }
     } catch (e) {
-        if (urgencyBadge) urgencyBadge.textContent = "Limited Early Access";
+        if (urgencyBadge) urgencyBadge.textContent = "Limited Access";
     }
 }
-
-// Initial Call
 updateStatus();
 
-// Form Submit
 if (form) {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-
         const email = emailInput.value;
         if (!email) return;
 
@@ -72,33 +64,33 @@ if (form) {
         submitBtn.textContent = "Verifying...";
         submitBtn.disabled = true;
         messageEl.textContent = "";
-        messageEl.className = "form-message"; // reset
+        messageEl.style.color = "#333";
 
         try {
-            const res = await fetch(`${API_BASE}/api/signup`, {
+            const res = await fetch(`${API_BASE}/signup`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email })
             });
-
             const data = await res.json();
 
             if (res.ok) {
-                messageEl.textContent = "Access Requested. Welcome to Likhat.";
-                messageEl.style.color = "#C8AA6E"; // Gold
+                messageEl.textContent = "Spot Reserved. Welcome.";
+                messageEl.style.color = "#164E55";
                 emailInput.value = "";
-                submitBtn.textContent = "Request Sent";
+                submitBtn.textContent = "Confirmed";
                 updateStatus();
             } else if (res.status === 409) {
-                throw new Error("This email is already registered.");
+                throw new Error("Already registered.");
             } else {
-                throw new Error("Connection error. Please try again.");
+                throw new Error("Error connecting.");
             }
         } catch (err) {
-            messageEl.textContent = err.message;
-            messageEl.style.color = "#E07A5F"; // Orange
+            messageEl.textContent = err.message || "Failed";
+            messageEl.style.color = "#E07A5F";
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
+            console.error(err);
         }
     });
 }

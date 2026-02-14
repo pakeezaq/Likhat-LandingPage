@@ -1,64 +1,38 @@
-import { sql } from '@vercel/postgres';
+import { neon } from '@neondatabase/serverless';
 
-export default async function handler(request, response) {
-    // CORS with wildcard (or specific origin)
-    response.setHeader('Access-Control-Allow-Origin', '*'); // For dev/prod ease
-    response.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+const sql = neon(process.env.DATABASE_URL);
+const MAX_EARLY_ACCESS = 50;
 
-    if (request.method === 'OPTIONS') {
-        return response.status(200).end();
-    }
+export default async function handler(req, res) {
+    if (req.method !== 'POST') return res.status(405).end();
+
+    const { email } = req.body;
+    if (!email || !email.includes('@')) return res.status(400).json({ error: 'Invalid email' });
 
     try {
-        const { email } = request.body;
+        // Check current Early Access count
+        const countResult = await sql`SELECT COUNT(*)::int AS count FROM early_access WHERE status='Early Access'`;
+        const currentCount = countResult[0].count;
 
-        // Ensure table exists (Safe idempotent op)
+        let status = currentCount >= MAX_EARLY_ACCESS ? 'Waitlist' : 'Early Access';
+
+        // Insert new email
         await sql`
-      CREATE TABLE IF NOT EXISTS signups (
-        id SERIAL PRIMARY KEY,
-        email VARCHAR(255) UNIQUE NOT NULL,
-        status VARCHAR(50) NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-      );
+      INSERT INTO early_access (email, status) 
+      VALUES (${email}, ${status})
+      ON CONFLICT (email) DO NOTHING
     `;
 
-        // 1. Transaction: Get Count + Insert atomically
-        // Simple logic:
-        // Check if email already exists
-        const existing = await sql`SELECT id FROM signups WHERE email = ${email};`;
-        if (existing.rowCount > 0) {
-            return response.status(409).json({ error: 'This email is already registered.' });
-        }
-
-        // Check count for 'Early Access'
-        const countResult = await sql`SELECT COUNT(*) FROM signups WHERE status = 'Early Access';`;
-        const currentCount = parseInt(countResult.rows[0].count, 10);
-        const MAX_EARLY_ACCESS = 50;
-
-        let status = 'Early Access';
-        let isWaitlist = false;
-
-        if (currentCount >= MAX_EARLY_ACCESS) {
-            status = 'Waitlist';
-            isWaitlist = true;
-        }
-
-        // Insert
-        await sql`
-      INSERT INTO signups (email, status)
-      VALUES (${email}, ${status});
-    `;
-
-        return response.status(200).json({
+        res.json({
             success: true,
-            message: isWaitlist ? 'Beta limit reached. You are on the priority waitlist.' : 'Spot Secured. Welcome to Likhat.',
-            status: status,
-            count: isWaitlist ? 50 : currentCount + 1
+            message: status === 'Waitlist'
+                ? 'Early access full, you are added to the waitlist'
+                : 'Spot secured! Welcome to Likhat Early Access',
+            status,
+            count: currentCount + (status === 'Early Access' ? 1 : 0)
         });
-
-    } catch (error) {
-        console.error('Database Error:', error);
-        return response.status(500).json({ error: 'Failed' });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Server error' });
     }
 }

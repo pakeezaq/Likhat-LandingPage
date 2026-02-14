@@ -962,6 +962,12 @@ footer {
         margin-bottom: 10px;
     }
 
+    .signup-form button {
+        width: 100%;
+        padding: 1.2rem;
+        font-size: 1.1rem;
+    }
+
     .footer-links {
         display: none;
     }

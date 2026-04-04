@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likhat Founding Circle - Exclusive Selection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="brand-logo">Likhat.</a>
+            <div class="nav-links">
+                <a href="/founding-circle.html" class="nav-link">Founding Circle</a>
+            </div>
+            <a href="#apply" class="btn btn-primary nav-cta">Apply for Selection</a>
+        </div>
+    </nav>
+
+    <section class="founding-hero fade-in" style="padding-top: 100px;">
+        <div class="container" style="text-align: center;">
+            <span class="urgency-badge" style="animation: none; background: rgba(200, 170, 110, 0.1); border-color: var(--gold-muted); color: var(--gold-muted);">Selection Open • Batch 01</span>
+            <h1>The trust infrastructure needs its pioneers.</h1>
+            <p>We are selecting a structured network of promoters who are responsible for introducing accountability into their environments. This is a role of influence and authority.</p>
+            <a href="#apply" class="btn btn-primary" style="background: var(--gold-muted); color: var(--teal-dark); font-size: 1.2rem; padding: 1.2rem 2.5rem;">Request Selection</a>
+        </div>
+    </section>
+
+    <!-- WHAT THIS IS -->
+    <section class="section-dark fade-in">
+        <div class="container">
+            <div class="split-layout" style="align-items: flex-start;">
+                <div>
+                    <h2 style="text-align: left; margin-bottom: 2rem;">Your Role</h2>
+                    <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); line-height: 1.8;">You are not just a user; you are the bridge. You are responsible for identifying where verbal promises are failing in your network and replacing them with Likhat’s structured trust. <br><br>Whether it’s university projects, freelance deals, or personal loans—you set the standard.</p>
+                </div>
+                <div class="feature-item" style="margin-top: 0;">
+                    <h3>The Authority</h3>
+                    <p>When something needs to be written, people come to you. You are the guide for clarity and security in your circle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section class="section-dark fade-in" style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <h2>Pioneer Benefits</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.5); margin-bottom: 5rem;">Real authority for real influence.</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Representative Card</h3>
+                    <p>An official Likhat Representative Card (Digital & Physical) to distinguish your role as a trust pioneer.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>First-Mover Status</h3>
+                    <p>Be the first in your university or professional network to define how digital agreements should be used.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Early Visibility</h3>
+                    <p>Priority recognition in the Likhat ecosystem and early access to upcoming platform expansions.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Public Recognition</h3>
+                    <p>Opportunities for public spotlights and features as we scale the movement across Pakistan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SELECTION PROCESS -->
+    <section class="content-section fade-in" id="apply">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Selection Process</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 4rem;">Limited selections per university. Applications are reviewed manually in batches.</p>
+            
+            <div class="fc-application">
+                <div class="step-form">
+                    <div class="step-indicator">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+
+                    <!-- Step 1: Personal -->
+                    <div class="form-step active" id="step-1">
+                        <h3>Identity & Influence</h3>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="fc-name" placeholder="Name as per CNIC">
+                        </div>
+                        <div class="form-group">
+                            <label>University / Office Name</label>
+                            <input type="text" id="fc-institution" placeholder="Where do you lead?">
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" id="fc-city" placeholder="Your current city">
+                        </div>
+                        <button class="btn btn-primary btn-form" onclick="nextStep(2)">Next Step</button>
+                    </div>
+
+                    <!-- Step 2: Experience -->
+                    <div class="form-step" id="step-2">
+                        <h3>The Cost of Trust</h3>
+                        <div class="form-group">
+                            <label>Have you ever experienced a broken verbal agreement?</label>
+                            <textarea id="fc-story" placeholder="Briefly describe the impact..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Why do you think Likhat should exist in Pakistan?</label>
+                            <textarea id="fc-need" placeholder="Your perspective on our trust culture..."></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn btn-back btn-form" onclick="nextStep(1)">Back</button>
+                            <button class="btn btn-primary btn-form" onclick="nextStep(3)">Next Step</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Vision -->
+                    <div class="form-step" id="step-3">
+                        <h3>Strategic Role</h3>
+                        <div class="form-group">
+                            <label>Where would you introduce Likhat first?</label>
+                            <textarea id="fc-intro" placeholder="E.g. Freelance circles, hostel loans, society dues..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>How would you get people to actually use it, not just download it?</label>
+                            <textarea id="fc-strategy" placeholder="Your approach to building trust habits..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="fc-email" placeholder="email@example.com">
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn btn-back btn-form" onclick="nextStep(2)">Back</button>
+                            <button id="submit-btn" class="btn btn-primary btn-form" style="background: var(--gold-muted); color: var(--teal-dark);" onclick="submitApplication()">Apply for Selection</button>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="form-step" id="step-success">
+                        <div style="text-align: center; padding: 2rem 0;">
+                            <span style="font-size: 4rem;">📜</span>
+                            <h3 style="margin-top: 1rem;">Application for Selection Received.</h3>
+                            <p>Our team reviews every application manually. If you are selected as a pioneer for your environment, we will contact you directly via email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content-wrapper">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <span class="logo">Likhat.</span>
+                    <span class="sub">Product of Praxi Systems</span>
+                </div>
+                <p class="footer-tagline">Making truth permanent in Pakistan.</p>
+            </div>
+            
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Program</h4>
+                    <a href="/founding-circle.html">Founding Circle</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/terms.html">Terms of Service</a>
+                    <a href="/privacy.html">Privacy Policy</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="/delete-account.html">Request Deletion</a>
+                    <a href="mailto:info@praxisystems.com">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Praxi Systems. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        function nextStep(step) {
+            const steps = document.querySelectorAll('.form-step');
+            const dots = document.querySelectorAll('.dot');
+            
+            steps.forEach(s => s.classList.remove('active'));
+            dots.forEach((d, index) => {
+                if (index < step) d.classList.add('active');
+                else d.classList.remove('active');
+            });
+            
+            document.getElementById(`step-${step}`).classList.add('active');
+            document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        async function submitApplication() {
+            const btn = document.getElementById('submit-btn');
+            const data = {
+                name: document.getElementById('fc-name').value,
+                institution: document.getElementById('fc-institution').value,
+                city: document.getElementById('fc-city').value,
+                story: document.getElementById('fc-story').value,
+                need: document.getElementById('fc-need').value,
+                intro: document.getElementById('fc-intro').value,
+                strategy: document.getElementById('fc-strategy').value,
+                email: document.getElementById('fc-email').value
+            };
+
+            if (!data.name || !data.email || !data.institution) {
+                alert('Please fill in the identity requirements.');
+                return;
+            }
+
+            btn.textContent = 'Submitting...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/api/founding-circle', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (res.ok) {
+                    const steps = document.querySelectorAll('.form-step');
+                    steps.forEach(s => s.classList.remove('active'));
+                    document.getElementById('step-success').classList.add('active');
+                    document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    throw new Error('Failed to submit.');
+                }
+            } catch (err) {
+                alert('Connection error. Please try again later.');
+                btn.textContent = 'Apply for Selection';
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

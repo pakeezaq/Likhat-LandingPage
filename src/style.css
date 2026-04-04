@@ -110,8 +110,8 @@ ul {
 /* Enhanced Animations */
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(20px);
+    transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform;
 }
 
@@ -223,6 +223,7 @@ ul {
 .btn-secondary:hover {
     border-color: var(--gold-muted);
     color: var(--gold-muted);
+    transform: translateY(-2px);
 }
 
 /* Navbar */
@@ -1014,3 +1015,377 @@ footer {
         opacity: 0.8;
     }
 }
+
+/* New Navigation & Footer Styles */
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--gold-muted);
+}
+
+.built-for-pakistan {
+    padding: 10rem 0;
+    background: var(--teal-dark);
+    text-align: center;
+}
+
+.pakistan-card {
+    max-width: 800px;
+    margin: 0 auto 5rem auto;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.flag-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pakistan-card h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.pakistan-card p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+}
+
+.app-stores {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.store-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.disabled-badge {
+    height: 48px;
+    opacity: 0.3;
+    filter: grayscale(1);
+    cursor: not-allowed;
+}
+
+.store-placeholder span {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    padding-bottom: 4rem;
+}
+
+.footer-tagline {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-col h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.footer-col a {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+}
+
+.footer-col a:hover {
+    color: var(--gold-muted);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Legal & Support Pages */
+.page-hero {
+    padding: 12rem 0 6rem 0;
+    background: var(--teal-primary);
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb {
+    font-size: 0.9rem;
+    color: var(--gold-muted);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.content-section {
+    padding: 8rem 0;
+    background: var(--cream-bg);
+    color: var(--text-dark);
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-content h2 {
+    margin: 2.5rem 0 1.5rem 0;
+    color: var(--teal-dark);
+    font-size: 1.8rem;
+}
+
+.legal-content h3 {
+    margin: 2rem 0 1rem 0;
+    color: var(--teal-primary);
+    font-size: 1.4rem;
+}
+
+.legal-content p {
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.legal-content ul {
+    margin-bottom: 1.5rem;
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.legal-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Account Deletion Page */
+.deletion-box {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-depth);
+    text-align: left;
+}
+
+.deletion-box h2 {
+    margin-bottom: 1rem;
+    color: var(--teal-dark);
+}
+
+.reassurance {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f0f4f4;
+    border-radius: 8px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--teal-primary);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Founding Circle Page */
+.founding-hero {
+    background: radial-gradient(circle at 50% 50%, #0A2A2F 0%, #050505 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.founding-hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.founding-hero p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.section-dark {
+    background: #050505;
+    color: #fff;
+    padding: 8rem 0;
+}
+
+.section-dark h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--gold-muted);
+}
+
+.feature-item h3 {
+    color: var(--gold-muted);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.fc-application {
+    max-width: 700px;
+    margin: 5rem auto 0 auto;
+}
+
+.step-form {
+    background: #fff;
+    padding: 4rem;
+    border-radius: 24px;
+    color: var(--text-dark);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: slideUp 0.5s ease;
+}
+
+.step-indicator {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 2rem;
+}
+
+.dot {
+    width: 30px;
+    height: 4px;
+    background: #eee;
+    border-radius: 2px;
+}
+
+.dot.active {
+    background: var(--teal-primary);
+}
+
+.form-step h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--teal-dark);
+}
+
+.btn-form {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.form-actions button {
+    flex: 1;
+    margin-top: 0;
+}
+
+.btn-back {
+    background: #f0f4f4;
+    color: var(--teal-primary);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 900px) {
+    .nav-links { display: none; }
+    .footer-content-wrapper { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .founding-hero h1 { font-size: 2.8rem; }
+    .pakistan-card h2 { font-size: 2rem; }
+}

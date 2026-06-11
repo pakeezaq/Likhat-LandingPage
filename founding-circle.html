@@ -8,13 +8,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/style.css">
+    <link rel="icon" type="image/png" href="./src/logo.png" />
 </head>
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="/" class="brand-logo">Likhat.</a>
+            <a href="/" class="brand-logo">
+                <img src="./src/logo.png" alt="Likhat Logo" class="brand-logo-img">
+                <span>Likhat.</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span class="hamburger"></span>
+            </button>
             <div class="nav-links">
-                <a href="/founding-circle.html" class="nav-link">Founding Circle</a>
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#how-it-works" class="nav-link">How It Works</a>
+                <a href="/#use-cases" class="nav-link">Use Cases</a>
+                <a href="/#trust" class="nav-link">Trust & Documentation</a>
+                <a href="/terms.html" class="nav-link">Terms</a>
+                <a href="/privacy.html" class="nav-link">Privacy</a>
+                <a href="#apply" class="btn btn-primary nav-cta-mobile">Apply for Selection</a>
             </div>
             <a href="#apply" class="btn btn-primary nav-cta">Apply for Selection</a>
         </div>
@@ -158,7 +171,10 @@
         <div class="container footer-content-wrapper">
             <div class="footer-main">
                 <div class="footer-brand">
-                    <span class="logo">Likhat.</span>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                        <img src="./src/logo.png" alt="Likhat Logo" style="height: 28px; width: auto; object-fit: contain;">
+                        <span class="logo" style="margin-right: 0;">Likhat.</span>
+                    </div>
                     <span class="sub">Product of Praxi Systems</span>
                 </div>
                 <p class="footer-tagline">Making truth permanent in Pakistan.</p>
@@ -166,8 +182,11 @@
             
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>Program</h4>
-                    <a href="/founding-circle.html">Founding Circle</a>
+                    <h4>Navigation</h4>
+                    <a href="/">Home</a>
+                    <a href="/#how-it-works">How It Works</a>
+                    <a href="/#use-cases">Use Cases</a>
+                    <a href="/#trust">Trust & Documentation</a>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
@@ -176,8 +195,8 @@
                 </div>
                 <div class="footer-col">
                     <h4>Support</h4>
-                    <a href="/delete-account.html">Request Deletion</a>
                     <a href="mailto:info@praxisystems.com">Contact Us</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.pakeezaq09.likhat" target="_blank" rel="noopener noreferrer">Get the App</a>
                 </div>
             </div>
         </div>

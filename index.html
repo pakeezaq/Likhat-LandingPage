@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="./src/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Likhat - The Cost of Verbal Trust</title>
+    <title>Likhat - Permanent Digital Agreements & Loan Records for Pakistan</title>
     <meta name="description"
-        content="Likhat turns everyday transactions into verified digital records. Secure, identity-verified agreements for Pakistan." />
+        content="Document interest-free loans (Qarz-e-Hasana), bayana advance payments, freelancer contracts, and service agreements in Pakistan. Include self-declared CNIC details to protect your agreements." />
 
     <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,296 +23,572 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="brand-logo">Likhat.</div>
+            <a href="/" class="brand-logo">
+                <img src="./src/logo.png" alt="Likhat Logo" class="brand-logo-img">
+                <span>Likhat.</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span class="hamburger"></span>
+            </button>
             <div class="nav-links">
-                <a href="/founding-circle.html" class="nav-link">Founding Circle</a>
+                <a href="/" class="nav-link">Home</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#use-cases" class="nav-link">Use Cases</a>
+                <a href="#trust" class="nav-link">Trust & Documentation</a>
+                <a href="/terms.html" class="nav-link">Terms</a>
+                <a href="/privacy.html" class="nav-link">Privacy</a>
+                <a href="https://play.google.com/store/apps/details?id=com.pakeezaq09.likhat" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-cta-mobile">Get the App</a>
             </div>
             <a href="https://play.google.com/store/apps/details?id=com.pakeezaq09.likhat" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-cta">Get the App</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION (Deep Green Teal) -->
-    <section class="hero fade-in">
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="ambient-glow glow-gold" style="top: 5%; right: 15%;"></div>
+        <div class="ambient-glow glow-teal" style="bottom: 15%; left: 5%;"></div>
+        
         <div class="container split-layout">
-            <div class="hero-content">
-                <h1>In Pakistan, Promises Are Verbal.<br><span class="text-gradient">Problems Are Legal.</span></h1>
-                <p class="hero-sub">This is not about convenience. It is about accountability. If it matters, write it.
-                    Likhat is the infrastructure for every record that defines your reputation.</p>
+            <div class="hero-content reveal-left">
+                <h1>Promises Are Verbal.<br><span class="serif-italic text-gradient">Likhat Makes Them Permanent.</span></h1>
+                <p class="hero-sub">The digital witness for loans, advance payments, and contracts in Pakistan.</p>
 
                 <div class="cta-group">
                     <a href="https://play.google.com/store/apps/details?id=com.pakeezaq09.likhat" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Get the App</a>
-                    <a href="#how-it-works" class="btn btn-secondary">See the Infrastructure <span
-                            class="arrow">→</span></a>
+                    <a href="#how-it-works" class="btn btn-secondary">See How It Works <span class="arrow">→</span></a>
                 </div>
 
                 <div class="micro-line">
-                    <span class="status-dot"></span> Available on Play Store. App Store coming soon.
+                    <span class="status-dot"></span> Available on Play Store. iOS coming soon.
                 </div>
             </div>
 
-            <div class="hero-visual">
-                <div class="hero-card">
-                    <div class="card-header">
-                        <span class="secure-icon">🔒</span>
-                        <span class="card-status">Verified Record</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-user">
-                            <div class="avatar">AH</div>
-                            <div>
-                                <div class="user-name">Ali Hassan</div>
-                                <div class="user-badge">CNIC Verified</div>
+            <div class="hero-visual reveal-right">
+                <div class="parallax-wrapper" data-speed="-0.08">
+                    <div class="phone-mockup float-1" style="border-color: #2b2315; box-shadow: var(--shadow-depth), 0 0 0 1px rgba(200, 170, 110, 0.25);">
+                        <div class="phone-screen" style="padding-top: 3rem;">
+                            <div class="phone-header" style="border-bottom: none; margin-bottom: 0.5rem;">
+                                <span>Agreement Details</span>
+                                <span style="color: var(--blue-soft);">🔒 Locked</span>
+                            </div>
+                            <div class="phone-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.25rem;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.25rem;">
+                                    <div class="avatar" style="width: 36px; height: 36px; font-size: 0.9rem; background: var(--gold-muted); color: var(--teal-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;">AH</div>
+                                    <div>
+                                        <div class="user-name" style="font-size: 0.85rem; font-weight: 600; color: #fff; line-height: 1.2;">Ali Hassan</div>
+                                        <div class="user-badge" style="font-size: 0.7rem; color: var(--blue-soft);">CNIC: 35201-xxxxxxx-x</div>
+                                    </div>
+                                </div>
+                                <div style="background: rgba(0, 0, 0, 0.25); padding: 0.8rem; border-radius: 8px; margin-bottom: 1rem;">
+                                    <div style="font-size: 0.65rem; color: var(--gold-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Qarz-e-Hasana Loan</div>
+                                    <div style="font-size: 1.2rem; color: #fff; font-weight: 700; margin-top: 2px;">PKR 100,000</div>
+                                </div>
+                                <div style="font-size: 0.7rem; opacity: 0.8; color: var(--text-light); margin-bottom: 1.25rem; line-height: 1.4;">
+                                    Repayment schedule set for 6 monthly installments.
+                                </div>
+                                <div style="background: rgba(168, 218, 220, 0.08); border: 1px solid rgba(168, 218, 220, 0.25); color: var(--blue-soft); padding: 0.5rem; text-align: center; border-radius: 6px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+                                    Confirmed by Both Parties
+                                </div>
                             </div>
                         </div>
-                        <div class="card-amount">
-                            <span class="amount-label">Agreement Value</span>
-                            <span class="amount-value">PKR 50,000</span>
-                        </div>
-                        <div class="card-time">
-                            Recorded: 14 Feb 2026 • 10:30 AM
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PAIN SECTION (Psychological Triggers) -->
-    <section class="pain-section fade-in">
+    <!-- COMPARISON SECTION (WhatsApp vs Likhat) -->
+    <section class="comparison-section">
+        <div class="ambient-glow glow-teal" style="top: 10%; left: 10%;"></div>
+        <div class="ambient-glow glow-gold" style="bottom: 10%; right: 10%;"></div>
+        
         <div class="container">
-            <h2>If it matters, write it.</h2>
-            <div class="pain-grid">
-                <!-- Relatable Vignette 1 -->
-                <div class="pain-item fade-in">
-                    <div class="pain-text">“Yaar bas kal pakka.”</div>
-                    <div class="pain-label">The Cost of Silence</div>
-                </div>
-
-                <!-- Relatable Vignette 2 -->
-                <div class="pain-item fade-in">
-                    <div class="pain-text">“I trusted him because he was family. Now I lost both.”</div>
-                    <div class="pain-label">The Cultural Tax</div>
-                </div>
-
-                <!-- Relatable Vignette 3 -->
-                <div class="pain-item fade-in">
-                    <div class="pain-text">“The agreement was verbal. The lawsuit was very real.”</div>
-                    <div class="pain-label">The Legal Gap</div>
-                </div>
-
-                <!-- Relatable Vignette 4 -->
-                <div class="pain-item fade-in">
-                    <div class="pain-text">“Paid advance. Phone switched off. No proof.”</div>
-                    <div class="pain-label">The Identity Risk</div>
-                </div>
-
-                <!-- Relatable Vignette 5 -->
-                <div class="pain-item fade-in">
-                    <div class="pain-text">“That wasn\'t part of the deal.”</div>
-                    <div class="pain-label">The Selective Memory</div>
-                </div>
-            </div>
-            <p class="pain-summary">We live in an informal economy where memory is weaponized. Likhat makes truth
-                permanent.</p>
-        </div>
-    </section>
-
-    <!-- POSITIONING SECTION -->
-    <section class="positioning-section fade-in">
-        <div class="container split-layout">
-            <div class="pos-content">
-                <h2>Documentation Is Power.<br><span class="text-orange">Messaging Is Not Enough.</span></h2>
-                <p class="pos-sub">Screenshots are not proof. Deleted chats are not records. Likhat is the
-                    infrastructure layer for every agreement that matters.</p>
-                <ul class="pos-list">
-                    <li><span class="check-icon">✓</span> Immutable digital records.</li>
-                    <li><span class="check-icon">✓</span> Bi-lateral signature confirmation.</li>
-                    <li><span class="check-icon">✓</span> CNIC-tied identity verification.</li>
-                    <li><span class="check-icon">✓</span> Tamper-proof timestamping.</li>
-                </ul>
-                <div class="contrast-box">
-                    Built for people who value their word—and want it recorded.
-                </div>
-            </div>
-
-            <div class="pos-visual">
-                <div class="app-mockup">
-                    <div class="app-header">
-                        <span>Record #8492</span>
-                        <span class="badge-active">Verified</span>
-                    </div>
-                    <div class="app-body">
-                        <div class="app-row">
-                            <span class="label">Context</span>
-                            <span class="value">Asset Sale</span>
-                        </div>
-                        <div class="app-row">
-                            <span class="label">Date</span>
-                            <span class="value">20 Feb 2026</span>
-                        </div>
-                        <div class="app-terms">
-                            Terms: Transfer of ownership upon full payment...
-                        </div>
-                        <div class="app-sig-area">
-                            <div class="sig-box filled">Verified by You</div>
-                            <div class="sig-box empty">Awaiting Confirmation</div>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="fade-in">WhatsApp is for Chatting. <br><span class="serif-italic text-gradient">Likhat is for Documenting.</span></h2>
+            <p class="comparison-subtitle fade-in stagger-1">A verbal conversation is not a record. Compare how informal chats fail versus how Likhat secures your transactions.</p>
+            
+            <div class="comparison-table-wrapper reveal-scale stagger-2">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>WhatsApp Chats</th>
+                            <th class="highlight-col" style="color: var(--gold-light);">Likhat Records</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Permanence</td>
+                            <td class="fail-cell">❌ Chat history can be deleted</td>
+                            <td class="success-cell highlight-col">✅ Immutable. Locked once confirmed.</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Structure</td>
+                            <td class="fail-cell">❌ Unstructured screenshots</td>
+                            <td class="success-cell highlight-col">✅ Clear fields for loans & contracts.</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Identity</td>
+                            <td class="fail-cell">❌ Easily changed phone numbers</td>
+                            <td class="success-cell highlight-col">✅ Anchored to CNIC & phone details.</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Sign-off</td>
+                            <td class="fail-cell">❌ One-sided statements</td>
+                            <td class="success-cell highlight-col">✅ Bilateral confirmation required.</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Retrieval</td>
+                            <td class="fail-cell">❌ Lost in scroll history</td>
+                            <td class="success-cell highlight-col">✅ Centrally organized dashboard.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- TRUST + VERIFICATION -->
-    <section class="trust-section fade-in">
+    <!-- USE CASES SECTION -->
+    <section class="use-cases-section" id="use-cases">
+        <div class="ambient-glow glow-gold" style="top: 20%; right: 5%;"></div>
+        <div class="ambient-glow glow-teal" style="bottom: 20%; left: 5%;"></div>
+        
         <div class="container">
-            <h2 style="color: #fff;">Identity is Accountability.</h2>
-            <p class="section-subtext" style="color: rgba(255,255,255,0.7);">In Pakistan, anonymity is where trust dies.
-                Every Likhat record is tied to a verified identity, strengthening the seriousness of your word.</p>
+            <h2 class="fade-in">The Agreements We Document</h2>
+            <p class="use-cases-subtitle fade-in stagger-1">Snappy documentation for everyday Pakistani transactions.</p>
+            
+            <div class="use-cases-grid">
+                <!-- Use Case 1: Loans -->
+                <div class="use-case-card glass-card reveal-scale stagger-1">
+                    <div class="use-case-header">
+                        <div class="use-case-icon-wrapper">
+                            <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Interest-Free Loans (Qarz-e-Hasana)</h3>
+                    </div>
+                    <div class="use-case-scenario">"Lending PKR 100,000 to a family member."</div>
+                    <div class="use-case-helps">Document repayment dates to protect relationships from forgotten promises.</div>
+                </div>
+
+                <!-- Use Case 2: Bayana -->
+                <div class="use-case-card glass-card reveal-scale stagger-2">
+                    <div class="use-case-header">
+                        <div class="use-case-icon-wrapper">
+                            <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Bayana / Advance Payments</h3>
+                    </div>
+                    <div class="use-case-scenario">"Paying PKR 50,000 advance to reserve a car or item."</div>
+                    <div class="use-case-helps">Secure instant digital receipts before paying cash to a seller.</div>
+                </div>
+
+                <!-- Use Case 3: Services -->
+                <div class="use-case-card glass-card reveal-scale stagger-3">
+                    <div class="use-case-header">
+                        <div class="use-case-icon-wrapper">
+                            <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
+                        <h3>Service Agreements</h3>
+                    </div>
+                    <div class="use-case-scenario">"Hiring a contractor or home renovator."</div>
+                    <div class="use-case-helps">Lock in scope of work and payment terms before tools are touched.</div>
+                </div>
+
+                <!-- Use Case 4: Freelance -->
+                <div class="use-case-card glass-card reveal-scale stagger-4">
+                    <div class="use-case-header">
+                        <div class="use-case-icon-wrapper">
+                            <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="2" y1="20" x2="22" y2="20"></line>
+                                <line x1="12" y1="17" x2="12" y2="20"></line>
+                            </svg>
+                        </div>
+                        <h3>Freelancer Contracts</h3>
+                    </div>
+                    <div class="use-case-scenario">"Designing a layout or writing code for a client."</div>
+                    <div class="use-case-helps">Document payment milestones to avoid getting blocked on WhatsApp.</div>
+                </div>
+
+                <!-- Use Case 5: Amanat -->
+                <div class="use-case-card glass-card reveal-scale stagger-5">
+                    <div class="use-case-header">
+                        <div class="use-case-icon-wrapper">
+                            <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h3>Amanat / Safekeeping</h3>
+                    </div>
+                    <div class="use-case-scenario">"Safekeeping family gold or business cash."</div>
+                    <div class="use-case-helps">Register weights and details formally before handovers.</div>
+                </div>
+
+                <!-- Use Case 6: Transactions -->
+                <div class="use-case-card glass-card reveal-scale stagger-6">
+                    <div class="use-case-header">
+                        <div class="use-case-icon-wrapper">
+                            <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h3>Transaction Records</h3>
+                    </div>
+                    <div class="use-case-scenario">"Trading goods, electronics, or wholesale items."</div>
+                    <div class="use-case-helps">Keep a structured record of trade parameters for both sides.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST + VERIFICATION (Dark Teal) -->
+    <section class="trust-section" id="trust">
+        <div class="container">
+            <h2 class="fade-in">Self-Declared Accountability</h2>
+            <p class="section-subtext fade-in stagger-1" style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem;">Likhat documents self-declared CNIC and phone details. We are not a government agency, we do not verify identity databases, and we do not guarantee legal enforceability.</p>
+            <p class="section-subtext fade-in stagger-2" style="color: var(--text-muted); margin-bottom: 4rem;">By writing down identity numbers next to terms, you add seriousness and mutual accountability to verbal agreements.</p>
 
             <div class="trust-grid">
-                <div class="trust-badge fade-in">
-                    <div class="trust-icon">🆔</div>
-                    <h3>Individual Verification</h3>
+                <div class="trust-badge reveal-scale stagger-1">
+                    <div class="use-case-icon-wrapper" style="margin: 0 auto 1.5rem auto;">
+                        <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="14" x="2" y="5" rx="2" />
+                            <path d="M6 14h4M6 10h8" />
+                        </svg>
+                    </div>
+                    <h3>Identity Anchoring</h3>
+                    <p>CNIC and contact details are bound to the record.</p>
                 </div>
-                <div class="trust-badge fade-in">
-                    <div class="trust-icon">⏱️</div>
-                    <h3>Permanent Log</h3>
+                <div class="trust-badge reveal-scale stagger-2">
+                    <div class="use-case-icon-wrapper" style="margin: 0 auto 1.5rem auto;">
+                        <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 6v6l4 2" />
+                        </svg>
+                    </div>
+                    <h3>Permanent Stamp</h3>
+                    <p>Agreements are stamped with the date and time.</p>
                 </div>
-                <div class="trust-badge fade-in">
-                    <div class="trust-icon">📂</div>
+                <div class="trust-badge reveal-scale stagger-3">
+                    <div class="use-case-icon-wrapper" style="margin: 0 auto 1.5rem auto;">
+                        <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="4" y1="21" x2="4" y2="14"></line>
+                            <line x1="4" y1="10" x2="4" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12" y2="3"></line>
+                            <line x1="20" y1="21" x2="20" y2="16"></line>
+                            <line x1="20" y1="12" x2="20" y2="3"></line>
+                            <line x1="1" y1="14" x2="7" y2="14"></line>
+                            <line x1="9" y1="8" x2="15" y2="8"></line>
+                            <line x1="17" y1="16" x2="23" y2="16"></line>
+                        </svg>
+                    </div>
                     <h3>Structured Intent</h3>
+                    <p>Prompts help specify exact amounts and dates.</p>
                 </div>
-                <div class="trust-badge fade-in">
-                    <div class="trust-icon">🗄️</div>
-                    <h3>Digital Authority</h3>
+                <div class="trust-badge reveal-scale stagger-4">
+                    <div class="use-case-icon-wrapper" style="margin: 0 auto 1.5rem auto;">
+                        <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Immutable Log</h3>
+                    <p>Terms cannot be changed after mutual lock.</p>
                 </div>
             </div>
-
-            <p class="final-trust-line">Your word is your legacy. Document it.</p>
+            
+            <p class="final-trust-line fade-in">Clear documentation is the foundation of trust.</p>
         </div>
     </section>
 
-    <!-- MYSTERY SECTION -->
-    <section class="mystery-section fade-in">
+    <!-- HOW IT WORKS (Plan Section with Phone Mockups) -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="ambient-glow glow-teal" style="top: 15%; left: 15%;"></div>
+        <div class="ambient-glow glow-gold" style="bottom: 15%; right: 15%;"></div>
+        
         <div class="container">
-            <h2 style="color: #fff; opacity: 0.9;">More Than an App. A Standard.</h2>
-            <div class="mystery-copy">
-                <p>We are building the trust layer that Pakistan has been missing for 77 years.</p>
-                <div class="mystery-tags">
-                    <span>Accountability logic</span>
-                    <span>Identity anchoring</span>
-                    <span>Conflict prevention</span>
-                    <span>Social proof</span>
-                </div>
-                <p class="intrigue">This is the start of something inevitable.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="how-it-works fade-in" id="how-it-works">
-        <div class="container">
-            <h2>The Process of Clarity</h2>
+            <h2 class="fade-in">The Path to Permanent Record Keeping</h2>
+            <p class="use-cases-subtitle fade-in stagger-1" style="margin-bottom: 4rem; color: var(--text-muted);">Establish mutual agreements in four structured steps.</p>
+            
             <div class="steps-row">
-                <div class="step-card fade-in">
-                    <div class="step-num">1</div>
-                    <h3>Definite Intent</h3>
-                    <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">Define the boundaries of your agreement.
-                    </p>
+                <!-- Step 1: Verify Profile -->
+                <div class="step-container reveal-scale stagger-1">
+                    <div class="parallax-wrapper" data-speed="-0.03">
+                        <div class="phone-mockup float-1" style="border-color: #2b2315; box-shadow: var(--shadow-depth), 0 0 0 1px rgba(200, 170, 110, 0.25);">
+                            <div class="phone-screen">
+                                <div class="phone-header">
+                                    <span>Verify Profile</span>
+                                    <span>Step 1</span>
+                                </div>
+                                <div class="phone-form">
+                                    <div class="mock-input-label">Legal Name</div>
+                                    <div class="mock-input-field">Ali Hassan</div>
+                                    
+                                    <div class="mock-input-label">CNIC Number</div>
+                                    <div class="mock-input-field">35201-1234567-1</div>
+                                    
+                                    <div class="mock-input-label">CNIC Photos (Front & Back)</div>
+                                    <div style="display: flex; gap: 8px;">
+                                        <div style="flex: 1; height: 35px; background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; color: var(--text-muted);">Front.jpg</div>
+                                        <div style="flex: 1; height: 35px; background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; color: var(--text-muted);">Back.jpg</div>
+                                    </div>
+                                </div>
+                                <div class="mock-button">Submit Profile</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-text-content">
+                        <div class="step-num">1</div>
+                        <h3>Verify Profile</h3>
+                        <p>Upload CNIC number and photos to unlock verified digital drafting.</p>
+                    </div>
                 </div>
-                <div class="step-arrow">→</div>
-                <div class="step-card fade-in">
-                    <div class="step-num">2</div>
-                    <h3>Joint Witness</h3>
-                    <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">Both parties confirm their
-                        participation.</p>
+
+                <!-- Step 2: Connect & Consent -->
+                <div class="step-container reveal-scale stagger-2">
+                    <div class="parallax-wrapper" data-speed="-0.05">
+                        <div class="phone-mockup float-2">
+                            <div class="phone-screen">
+                                <div class="phone-header">
+                                    <span>Connect & Consent</span>
+                                    <span>Step 2</span>
+                                </div>
+                                <div class="phone-form" style="display: flex; flex-direction: column; justify-content: center; flex: 1; padding: 0.5rem 0;">
+                                    <div style="text-align: center; margin-bottom: 0.8rem; font-size: 1.5rem;">🤝</div>
+                                    <div style="font-size: 0.7rem; text-align: center; color: var(--gold-light); font-weight: 600; margin-bottom: 0.4rem;">Mutual Consent</div>
+                                    <div style="font-size: 0.62rem; text-align: center; color: var(--text-muted); line-height: 1.35; margin-bottom: 0.8rem;">
+                                        Formally accept consent to securely share CNICs for agreement integrity.
+                                    </div>
+                                    <div class="mock-sig-box signed" style="text-align: center; margin-bottom: 0px; font-size: 0.6rem; padding: 0.4rem;">Partner Accepted</div>
+                                </div>
+                                <div class="mock-button">Accept Consent</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-text-content">
+                        <div class="step-num">2</div>
+                        <h3>Connect & Consent</h3>
+                        <p>Connect with a partner. Both parties must accept consent before writing.</p>
+                    </div>
                 </div>
-                <div class="step-arrow">→</div>
-                <div class="step-card fade-in">
-                    <div class="step-num">3</div>
-                    <h3>Verified Record</h3>
-                    <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">A permanent, non-editable proof is born.
-                    </p>
+
+                <!-- Step 3: Draft Agreement -->
+                <div class="step-container reveal-scale stagger-3">
+                    <div class="parallax-wrapper" data-speed="-0.07">
+                        <div class="phone-mockup float-3">
+                            <div class="phone-screen">
+                                <div class="phone-header">
+                                    <span>Draft Agreement</span>
+                                    <span>Step 3</span>
+                                </div>
+                                <div class="phone-form">
+                                    <div class="mock-input-label">Agreement Type</div>
+                                    <div class="mock-input-field select">Qarz-e-Hasana Loan</div>
+                                    
+                                    <div class="mock-input-label">Amount (PKR)</div>
+                                    <div class="mock-input-field">100,000</div>
+                                    
+                                    <div class="mock-input-label">Repayment Date</div>
+                                    <div class="mock-input-field">31 Dec 2026</div>
+                                </div>
+                                <div class="mock-button">Share Draft</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-text-content">
+                        <div class="step-num">3</div>
+                        <h3>Draft Agreement</h3>
+                        <p>Select your transaction type, input terms, amounts, and dates.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4: Sign & Complete -->
+                <div class="step-container reveal-scale stagger-4">
+                    <div class="parallax-wrapper" data-speed="-0.09">
+                        <div class="phone-mockup float-4" style="border-color: #2b2315; box-shadow: var(--shadow-depth), 0 0 0 1px rgba(200, 170, 110, 0.25);">
+                            <div class="phone-screen">
+                                <div class="phone-header">
+                                    <span>Sign & Complete</span>
+                                    <span>Step 4</span>
+                                </div>
+                                <div class="phone-form" style="padding: 0;">
+                                    <div class="mock-success-badge" style="margin-bottom: 0.5rem; font-size: 0.6rem; padding: 0.35rem;">🔒 Locked & Finalized</div>
+                                    
+                                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.4rem; margin-bottom: 0.5rem; font-size: 0.6rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
+                                            <span style="color: var(--text-muted);">Borrower:</span>
+                                            <span style="color: var(--gold-light); font-family: var(--font-serif); font-style: italic;">Ali Hassan</span>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span style="color: var(--text-muted);">Lender:</span>
+                                            <span style="color: var(--gold-light); font-family: var(--font-serif); font-style: italic;">Umar Malik</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="border: 1px dashed rgba(168, 218, 220, 0.2); background: rgba(168, 218, 220, 0.03); color: var(--blue-soft); padding: 0.35rem; text-align: center; border-radius: 6px; font-size: 0.6rem; font-weight: 500;">
+                                        📄 Receipt Uploaded
+                                    </div>
+                                </div>
+                                <div class="mock-button success">View Certificate</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-text-content">
+                        <div class="step-num">4</div>
+                        <h3>Sign & Complete</h3>
+                        <p>Draw digital signatures, upload receipts, and finalize the secure record.</p>
+                    </div>
                 </div>
             </div>
-            <p class="step-footer">Simple. Provocative. Inevitable.</p>
+            <p class="step-footer fade-in">A simple process designed to create clarity and eliminate misunderstandings.</p>
         </div>
     </section>
 
-    <!-- STORIES SECTION (Deep Emotional Copy) -->
-    <section class="stories-section fade-in">
+    <!-- FAILURE SECTION (Emotional scenarios) -->
+    <section class="pain-section">
+        <div class="ambient-glow glow-amber" style="top: 20%; left: 10%;"></div>
+        
         <div class="container">
-            <h3 class="stories-title">The Cost of "Yaar Bharosa Kar"</h3>
-            <div class="stories-grid">
-                <div class="story-card fade-in">
-                    <div class="story-card-inner">
-                        <p>“I thought we were friends. But when it came to the money, he acted like he didn’t remember
-                            the terms. It cost me the money and a 10-year friendship.”</p>
-                        <span class="story-tag">The Social Betrayal</span>
-                    </div>
+            <h2 class="fade-in">The Cost of Verbal Trust</h2>
+            <p class="pain-summary fade-in stagger-1">When verbal agreements fall apart in Pakistan, relationships break.</p>
+            
+            <div class="pain-grid">
+                <div class="pain-item reveal-scale stagger-1">
+                    <div class="pain-text">"He was family. When I asked for the loan back, he claimed it was a gift."</div>
+                    <div class="pain-label">Family Loan Dispute</div>
                 </div>
-                <div class="story-card fade-in">
-                    <div class="story-card-inner">
-                        <p>“Family dinners are now silent because of a small loan that 'wasn\'t really a loan'. Without
-                            records, there is no way back.”</p>
-                        <span class="story-tag">The Domestic Fracture</span>
-                    </div>
+
+                <div class="pain-item reveal-scale stagger-2">
+                    <div class="pain-text">"I delivered the code. The client blocked me on WhatsApp."</div>
+                    <div class="pain-label">Freelancer Betrayal</div>
                 </div>
-                <div class="story-card fade-in">
-                    <div class="story-card-inner">
-                        <p>“The work was done. The client disappeared. On WhatsApp, I was blocked. In reality, I had no
-                            proof that a deal ever existed.”</p>
-                        <span class="story-tag">The Invisible Victim</span>
-                    </div>
+
+                <div class="pain-item reveal-scale stagger-3">
+                    <div class="pain-text">"The contractor left mid-way and demanded double the budget."</div>
+                    <div class="pain-label">Contractor Conflict</div>
+                </div>
+
+                <div class="pain-item reveal-scale stagger-4">
+                    <div class="pain-text">"Paid 50k bayana. The seller sold the item to someone else."</div>
+                    <div class="pain-label">Bayana Misunderstanding</div>
+                </div>
+
+                <div class="pain-item reveal-scale stagger-5">
+                    <div class="pain-text">"Gold safe weight was short when returned. Friendship ended."</div>
+                    <div class="pain-label">Amanat Disagreement</div>
                 </div>
             </div>
-            <p class="story-conclusion">Likhat ends the era of "misunderstandings".</p>
+        </div>
+    </section>
+
+    <!-- SUCCESS SECTION (Transformational outcomes) -->
+    <section class="success-section">
+        <div class="ambient-glow glow-blue" style="bottom: 20%; right: 10%;"></div>
+        
+        <div class="container">
+            <h2 class="fade-in">Trust Built on Clarity</h2>
+            <p class="success-subtitle fade-in stagger-1">Say goodbye to informal verbal uncertainty.</p>
+            
+            <div class="success-grid">
+                <div class="success-card glass-card reveal-scale stagger-1">
+                    <div class="success-icon-wrapper">
+                        <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Clear Expectations</h3>
+                    <p>Both parties know exactly what they signed up for: no forgotten dates or shifting values.</p>
+                </div>
+                
+                <div class="success-card glass-card reveal-scale stagger-2">
+                    <div class="success-icon-wrapper">
+                        <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </div>
+                    <h3>Relationship Protection</h3>
+                    <p>Prevent the awkward misunderstandings that tear family bonds and long-term friendships apart.</p>
+                </div>
+                
+                <div class="success-card glass-card reveal-scale stagger-3">
+                    <div class="success-icon-wrapper">
+                        <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        </svg>
+                    </div>
+                    <h3>Mutual Accountability</h3>
+                    <p>Self-declared CNIC and phone details bring seriousness to agreements from day one.</p>
+                </div>
+                
+                <div class="success-card glass-card reveal-scale stagger-4">
+                    <div class="success-icon-wrapper">
+                        <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 8 8 12 12 16"></polyline>
+                            <line x1="16" y1="12" x2="8" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>Confidence in Deals</h3>
+                    <p>Pay advances, safekeep items, or hire service providers with complete peace of mind.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- FOUNDER NOTE -->
-    <section class="founder-section fade-in">
+    <section class="founder-section">
         <div class="container">
-            <blockquote>
+            <blockquote class="fade-in">
                 “We don’t need more laws. We need more witnesses. Likhat is the digital witness that never forgets.”
             </blockquote>
         </div>
     </section>
 
-    <!-- PRE LAUNCH SECTION -->
-    <section class="pre-launch fade-in" id="pre-launch">
+    <!-- PLAY STORE CTA SECTION -->
+    <section class="pre-launch" id="get-app">
         <div class="container">
-            <h2 style="color: #fff;">Pakistan Deserves Higher Standards.</h2>
-            <p class="subtext" style="color: rgba(255,255,255,0.7); margin-bottom: 3rem;">This is not about downloads.
-                It is about accountability.<br>Experience the infrastructure of truth.</p>
+            <h2 class="fade-in">Pakistan Deserves Higher Standards.</h2>
+            <p class="subtext fade-in stagger-1" style="color: rgba(255,255,255,0.7); margin-bottom: 3rem;">Do not wait for a misunderstanding to happen. Get Likhat and document your first agreement in less than three minutes.</p>
 
-            <div class="cta-group" style="justify-content: center;">
+            <div class="cta-group fade-in stagger-2" style="justify-content: center;">
                 <a href="https://play.google.com/store/apps/details?id=com.pakeezaq09.likhat" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Get the App</a>
-                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.4); margin-top: 10px; width: 100%;">Available on Play Store. App Store coming soon.</div>
+                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.4); margin-top: 10px; width: 100%;">Available on Play Store. iOS coming soon.</div>
             </div>
 
-            <div class="badge-row">
+            <div class="badge-row fade-in stagger-3">
                 <span class="feature-badge">Loan Records</span>
                 <span class="feature-badge">Freelance Protection</span>
-                <span class="feature-badge">Rental Pledges</span>
                 <span class="feature-badge">Advance Receipts</span>
-                <span class="feature-badge">Trust Identity</span>
+                <span class="feature-badge">Amanat Documentation</span>
+                <span class="feature-badge">Service Agreements</span>
             </div>
         </div>
     </section>
 
     <!-- BUILT FOR PAKISTAN SECTION -->
-    <section class="built-for-pakistan fade-in">
+    <section class="built-for-pakistan">
         <div class="container">
-            <div class="pakistan-card">
+            <div class="pakistan-card fade-in">
                 <h2>Designed for real transactions,<br><span class="text-gradient">not ideal ones.</span></h2>
-                <p>We operate in a country where the informal economy is the lifeblood, yet it remains the most
-                    vulnerable. Likhat is built for how trust actually works here—bridging the gap with technology that
-                    respects our culture while demanding modern accountability.</p>
+                <p>We operate in a country where the informal economy is the lifeblood, yet it remains the most vulnerable. Likhat is built for how trust actually works here—bridging the gap with technology that respects our culture while demanding modern accountability.</p>
             </div>
 
-            <div class="app-stores">
+            <div class="app-stores fade-in stagger-1">
                 <div class="store-placeholder">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                         alt="App Store" class="disabled-badge">
@@ -331,7 +607,10 @@
         <div class="container footer-content-wrapper">
             <div class="footer-main">
                 <div class="footer-brand">
-                    <span class="logo">Likhat.</span>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                        <img src="./src/logo.png" alt="Likhat Logo" style="height: 28px; width: auto; object-fit: contain;">
+                        <span class="logo" style="margin-right: 0;">Likhat.</span>
+                    </div>
                     <span class="sub">Product of Praxi Systems</span>
                 </div>
                 <p class="footer-tagline">Making truth permanent in Pakistan.</p>
@@ -339,8 +618,11 @@
 
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>Program</h4>
-                    <a href="/founding-circle.html">Founding Circle</a>
+                    <h4>Navigation</h4>
+                    <a href="/">Home</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#use-cases">Use Cases</a>
+                    <a href="#trust">Trust & Documentation</a>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
@@ -349,8 +631,8 @@
                 </div>
                 <div class="footer-col">
                     <h4>Support</h4>
-                    <a href="/delete-account.html">Request Deletion</a>
                     <a href="mailto:info@praxisystems.com">Contact Us</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.pakeezaq09.likhat" target="_blank" rel="noopener noreferrer">Get the App</a>
                 </div>
             </div>
         </div>

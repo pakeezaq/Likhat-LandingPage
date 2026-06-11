@@ -1640,6 +1640,22 @@ footer {
         transition: none !important;
     }
 
+    /* Mobile Performance & Crash Prevention Overrides */
+    .ambient-glow {
+        display: none !important;
+    }
+
+    .glass-card, .comparison-table-wrapper, .navbar, .nav-links {
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        background: rgba(2, 9, 10, 0.93) !important;
+    }
+
+    .fade-in, .reveal-left, .reveal-right, .reveal-scale, .reveal-3d {
+        filter: none !important;
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
     .nav-cta {
         display: none;
     }

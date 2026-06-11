@@ -1,22 +1,29 @@
-// Scroll Reveal with Premium Intersection Observer
-const observerOptions = {
-    threshold: 0.12,
-    rootMargin: "0px 0px -40px 0px"
-};
+// Scroll Reveal with Premium Intersection Observer (and safety fallback for older mobile devices)
+if ('IntersectionObserver' in window) {
+    const observerOptions = {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe reveal elements, including new reveal-3d animations
+    document.querySelectorAll('.fade-in, .reveal-left, .reveal-right, .reveal-scale, .reveal-3d').forEach(sec => {
+        observer.observe(sec);
     });
-}, observerOptions);
-
-// Observe reveal elements, including new reveal-3d animations
-document.querySelectorAll('.fade-in, .reveal-left, .reveal-right, .reveal-scale, .reveal-3d').forEach(sec => {
-    observer.observe(sec);
-});
+} else {
+    // Fallback for older mobile browsers: immediately show elements
+    document.querySelectorAll('.fade-in, .reveal-left, .reveal-right, .reveal-scale, .reveal-3d').forEach(sec => {
+        sec.classList.add('visible');
+    });
+}
 
 // Smooth Scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -56,10 +63,19 @@ if (menuToggle && navLinks) {
 
 const navbar = document.querySelector('.navbar');
 
-// Create a premium dynamic scroll progress bar at the top of the viewport
-const progressBar = document.createElement('div');
-progressBar.className = 'scroll-progress';
-document.body.appendChild(progressBar);
+// Create a premium dynamic scroll progress bar at the top of the viewport (safely handled if body is not parsed yet)
+let progressBar = null;
+if (document.body) {
+    progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+} else {
+    window.addEventListener('DOMContentLoaded', () => {
+        progressBar = document.createElement('div');
+        progressBar.className = 'scroll-progress';
+        document.body.appendChild(progressBar);
+    });
+}
 
 // Cache parallax nodes to optimize performance
 const parallaxWrappers = document.querySelectorAll('.parallax-wrapper');
@@ -79,11 +95,13 @@ function handleScrollEffects() {
         }
     }
 
-    // 2. Update Scroll Progress indicator
-    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolledPercent = height > 0 ? (winScroll / height) * 100 : 0;
-    progressBar.style.width = `${scrolledPercent}%`;
+    // 2. Update Scroll Progress indicator (only if progressbar element has been successfully attached)
+    if (progressBar) {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolledPercent = height > 0 ? (winScroll / height) * 100 : 0;
+        progressBar.style.width = `${scrolledPercent}%`;
+    }
 
     const isMobile = window.innerWidth <= 900;
 

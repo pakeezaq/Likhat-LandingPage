@@ -1168,7 +1168,7 @@ footer {
 
 .footer-content-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1.8fr;
+    grid-template-columns: 1fr 2.2fr;
     gap: 5rem;
     padding-bottom: 3.5rem;
 }
@@ -1188,7 +1188,7 @@ footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
 }
 
